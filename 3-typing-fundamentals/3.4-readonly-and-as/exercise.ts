@@ -11,13 +11,13 @@ interface Address {
 interface Person {
   firstName: string;
   lastName: string;
-  age: number;
-  address: Address;
+  readonly age: number;
+  readonly address: Address;
 }
 
 function updatePerson(person: Person) {
-  person.age = 30;
-  person.address = { street: "New Street", city: "New City" };
+  person.age = 30; // Modification is not allowed
+  person.address = { street: "New Street", city: "New City" }; // modification is not allowed
   console.log(person);
 }
 
@@ -27,7 +27,7 @@ function updatePerson(person: Person) {
 const personConst = {
   firstName: "John",
   lastName: "Doe",
-};
+}
 
 // Try to mutate person.age and person.address.
 personConst.firstName = "Jane"; // Error: Cannot assign to 'firstName' because it is a read-only property.

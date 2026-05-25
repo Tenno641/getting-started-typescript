@@ -14,3 +14,12 @@ interface Employee {
   employeeId: number;
   department: string;
 }
+
+type Staff = Person & Employee;
+
+const staff: Staff = {
+  name: "Name",
+  age: 15,
+  department: "Department",
+  employeeId: 2,
+}
