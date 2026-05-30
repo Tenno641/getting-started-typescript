@@ -2,7 +2,7 @@
 // and a static method `calculateArea` that accepts a radius.
 
 class Circle {
-  pi: number = 3.14;
+  static pi: number = 3.14;
 
   radius: number;
 
@@ -10,11 +10,23 @@ class Circle {
     this.radius = radius;
   }
 
-  calculateArea(): number {
-    return this.pi * this.radius * this.radius;
+  static calculateArea(radius: number): number {
+    return Circle.pi * radius * radius;
   }
 }
 
 // Exercise 2: Create a class `Counter` with a private static field `count`
 // that tracks of the number of instances created.
 // Include a `getCount` method that returns the current count.
+
+class Counter {
+  private static count: number = 0;
+  
+  constructor() {
+    Counter.count++;
+  }
+  
+  static getCount() {
+    return Counter.count;
+  }
+}

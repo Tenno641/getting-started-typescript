@@ -5,7 +5,20 @@
 // Add a constructor that initializes the `name` field and a public method `getName`
 // that returns the value of `name`.
 
+class Person {
+    private readonly name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    get getName(): string {
+        return this.name;
+    }
+}
+
 // Question 2:
 // Create an instance of the `Person` class with the name "Alice".
 // Try to access the `name` field directly from the instance and observe the TypeScript error.
 // Use the `getName` method to get the name instead.
+const person = new Person("PersonName");
+
+// person.name; 'name' is private and only accessible within the class.
