@@ -4,3 +4,23 @@
 // Create a class `BankAccount` with a private property `balance` of type `number`.
 // Add a getter `getBalance` and a setter `setBalance` to access and modify the `balance` property.
 // Ensure that the balance cannot be set to a negative value.
+
+class BankAccount {
+    private balance: number;
+    constructor(balance: number) {
+        this.balance = balance;
+    }
+    
+    get getBalance() {
+        return this.balance;
+    }
+    
+    set setBalance(value: number) {
+        if (value >= 0){
+            this.balance = value;
+        }
+    }
+}
+
+const bankAccount = new BankAccount(53363);
+console.log(bankAccount.getBalance);

@@ -16,12 +16,19 @@ class Book {
   }
 }
 
+const book = new Book("Title", "Author");
+
 // Question 2: Create a new object of type `Tree` below.
 
 type Tree = {
   height: number;
   age: number;
 };
+
+const tree: Tree = {
+  height: 35,
+  age: 15
+}
 
 // Question 3: Create a new object of type `Car` below.
 
